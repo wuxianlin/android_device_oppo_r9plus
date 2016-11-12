@@ -16,6 +16,7 @@
 
 #include "unicode/utext.h"
 #include "unicode/ucnv.h"
+#include <string>
 
 //const char *ucnv_convert_55;
 //const char *u_setDataDirectory_55;
@@ -41,4 +42,17 @@ u_setDataDirectory_55(const char *directory) {
 U_CAPI const char * U_EXPORT2
 u_errorName_55(UErrorCode code) {
     return u_errorName(code);
+}
+
+// GraphicBuffer(uint32_t inWidth, uint32_t inHeight, PixelFormat inFormat,
+//               uint32_t inUsage, std::string requestorName = "<Unknown>");
+extern "C" void _ZN7android13GraphicBufferC1EjjijNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE(
+    uint32_t inWidth, uint32_t inHeight, int inFormat, uint32_t inUsage,
+    std::string requestorName);
+
+extern "C" void _ZN7android13GraphicBufferC1Ejjij(
+    uint32_t inWidth, uint32_t inHeight, int inFormat, uint32_t inUsage) {
+  std::string requestorName = "<Unknown>";
+  _ZN7android13GraphicBufferC1EjjijNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE(
+      inWidth, inHeight, inFormat, inUsage, requestorName);
 }

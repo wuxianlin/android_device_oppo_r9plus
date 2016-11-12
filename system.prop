@@ -1,6 +1,6 @@
 ro.sf.lcd_density=480
 persist.camera.oppo.fmask=1
-persist.camera.packname=com.tencent.mobileqq
+persist.camera.packname=com.android.camera2
 ro.telephony.default_network=10,20
 persist.radio.multisim.config=dsds
 gsm.lte.ca.support=1

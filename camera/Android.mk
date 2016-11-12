@@ -17,14 +17,15 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES :=\
- camera_shim.cpp
-# Fence.cpp \
+    camera_shim.cpp
+#    Fence.cpp \
 
 LOCAL_C_INCLUDES += \
     external/icu/icu4c/source/common
 
-LOCAL_SHARED_LIBRARIES := libicuuc
-# libui
+LOCAL_SHARED_LIBRARIES := \
+    libicuuc \
+    libui
 
 LOCAL_MODULE := libcamera_shim
 LOCAL_MODULE_TAGS := optional

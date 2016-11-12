@@ -1,3 +1,18 @@
+# Alipay
+bin/alipayservice
+etc/firmware/alipay.b00
+etc/firmware/alipay.b01
+etc/firmware/alipay.b02
+etc/firmware/alipay.b03
+etc/firmware/alipay.b04
+etc/firmware/alipay.b05
+etc/firmware/alipay.b06
+etc/firmware/alipay.mdt
+etc/permissions/org.ifaa.android.manager.permissions.xml
+framework/ifaamanager.jar
+lib/libteeclientjni.so
+lib64/libteeclientjni.so
+
 # Audio
 etc/firmware/tfa98xx.cnt
 
@@ -22,12 +37,23 @@ lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
 lib/libqomx_core.so
 lib/libcritical_log_service.so
+lib/libmms_gyro_vstab.so
+lib/libmms_gyro_vstab_auth.so
+lib/libmms_hal_vstab.so
+lib/libmms_warper_vstab.so
 lib/libopposfr.so
+lib/libst_mobile.so
+lib/libDocFace.so
+lib/libFNPlatformGL_Oppo_msm8976.so
+lib/libFNVfbEngineHAL.so
+lib/libSCES.so
+lib/libSensorManagerHAL.so
 lib/libVDBlurlessAPI.so
+lib/libVDSuperPhotoAPI.so
 lib64/libcritical_log_service.so
 lib/hw/camera.msm8952.so
 vendor/lib/lib-imscamera.so
-vendor/lib/libflash_pmic.so
+vendor/lib/libcvface_api.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
@@ -92,9 +118,11 @@ vendor/lib/libmmcamera_isp_sub_module.so
 vendor/lib/libmmcamera_isp_wb40.so
 vendor/lib/libmmcamera_llvd.so
 vendor/lib/libmmcamera_optizoom_lib.so
+vendor/lib/libmmcamera_paaf_lib.so
 vendor/lib/libmmcamera_pdafcamif.so
 vendor/lib/libmmcamera_pdaf.so
 vendor/lib/libmmcamera_ppbase_module.so
+vendor/lib/libmmcamera_quadracfa.so
 vendor/lib/libmmcamera_stillmore_lib.so
 vendor/lib/libmmcamera_sw_tnr.so
 vendor/lib/libmmcamera_thread_services.so
@@ -106,10 +134,7 @@ vendor/lib/libmmcamera_ubifocus_lib.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmmqjpegdma.so
-vendor/lib/libflash_bd7710.so
 vendor/lib/libflash_lm3643.so
-vendor/lib/libois_bu24218.so
-vendor/lib/libois_lc898122.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
@@ -118,8 +143,6 @@ vendor/lib/libts_detected_face_hal.so
 vendor/lib/libts_face_beautify_hal.so
 
 # Camera actuators
-vendor/lib/libactuator_ak7371_16037.so
-vendor/lib/libactuator_dw9800w.so
 vendor/lib/libactuator_lc898217xc.so
 
 # Camera chromatix
@@ -243,8 +266,10 @@ etc/firmware/fingerprint.b06
 etc/firmware/fingerprint.mdt
 lib64/hw/fingerprint.msm8952.so
 lib64/lib_fpc_tac_shared.so
+lib64/libalipay_factory.so
 lib/hw/fingerprint.msm8952.so
 lib/lib_fpc_tac_shared.so
+lib/libalipay_factory.so
 
 # Sensors
 etc/sensors/hals.conf
@@ -257,6 +282,7 @@ etc/firmware/tp/15103/15103_key_Limit_Samsung.img
 etc/firmware/tp/15103/15103_Limit_hybrid.img
 
 lib/modules/ansi_cprng.ko
+lib/modules/core_ctl.ko
 lib/modules/evbug.ko
 lib/modules/gpio_axis.ko
 lib/modules/gpio_event.ko

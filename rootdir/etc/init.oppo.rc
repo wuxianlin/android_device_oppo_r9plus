@@ -9,7 +9,6 @@
 ### ------------------------------------------------------------------------------
 ### jiangyg@PM                     2013-10-21                Create this file
 ##################################################################################
-
 #ifdef VENDOR_EDIT
 #Wei.Wang@Swdp.Android.Storage, 2016/06/30, add for support /storage/sdcard0
 on post-fs-data
@@ -19,31 +18,23 @@ on post-fs-data
 #ifdef VENDOR_EDIT
 #WeiHong.Li@Mobile.Network, 2015/09/11, Add suid_dumpable to capture rild's tombstone according to case 02090380
 #Zhengpeng@OnLineRD.AirService.RIL, 2013/11/4, Add for create opponvitems dir
+#Haitao.Zhou@BSP.Fingerprint.Secure, 2016/07/13, Add for creat rpmb_status floder in persist
+#zhunn@OnLineRD.AirService.RIL, 2015/1/28, Add for cdma card cannot send sms in Yiwu
 on boot
 	mkdir /data/opponvitems  0771 radio radio
 	write /proc/sys/fs/suid_dumpable 1
+	mkdir /persist/rpmb_status
+	chmod 0777 /persist/rpmb_status
+    setprop persist.radio.force_on_dc true
 	write /sys/class/power_supply/usb/otg_switch 1
 #endif
 
 #ifdef VENDOR_EDIT
-#//Hui.Fan@BSP.Kernel.MM, 2016-08-29
-#//Enlarge the cycle to save power
-on boot
-	write /proc/sys/vm/dirty_writeback_centisecs 1500
-#endif /* VENDOR_EDIT */
-
-#ifdef VENDOR_EDIT
-#zhunn@OnLineRD.AirService.RIL, 2015/1/28, Add for cdma card cannot send sms in Yiwu
-	setprop persist.radio.force_on_dc true
-#endif
-
-#ifndef VENDOR_EDIT
-#Yang.Li@Swdp.Android.Power, 2014/12/10, Add for
-on property:sys.engineermode.chargeswitch=true
-write /sys/class/power_supply/battery/mmi_charging_enable 1
-
-on property:sys.engineermode.chargeswitch=false
-write /sys/class/power_supply/battery/mmi_charging_enable 0
+#Haitao.Zhou@BSP.Fingerprint.Payment, 2016/08/27, Add alipay service
+service alipayservice /system/bin/alipayservice
+    class late_start
+    user system
+    group system
 #endif /* VENDOR_EDIT */
 
 # ifdef VENDOR_EDIT
