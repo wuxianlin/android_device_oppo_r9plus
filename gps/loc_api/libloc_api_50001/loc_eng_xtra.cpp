@@ -187,10 +187,10 @@ int loc_eng_xtra_request_server(loc_eng_data_s_type &loc_eng_data)
     return 0;
 }
 /*===========================================================================
-FUNCTION    loc_eng_xtra_setdebug_log
+FUNCTION    loc_eng_set_debug_level
 
 ===========================================================================*/
-int loc_eng_xtra_setdebug_log(loc_eng_data_s_type &loc_eng_data, int type)
+int loc_eng_set_debug_level(loc_eng_data_s_type &loc_eng_data, int type)
 {
     ENTRY_LOG();
     EXIT_LOG(%d, type);

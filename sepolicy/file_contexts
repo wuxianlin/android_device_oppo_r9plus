@@ -24,3 +24,6 @@
 /dev/homekey	u:object_r:homekey_device:s0
 #Ziqing.GUO@Prd.BaseDrv, 2015/11/24, Add for fingerprint ImageTool base on Normal world FPC driver
 /dev/fpc1020	u:object_r:fpc1020_device:s0
+
+#Haitao.Zhou@BSP.Fingerprint.Payment, 2016/10/01, add for alipay service
+/system/bin/alipayservice	u:object_r:alipayservice_exec:s0

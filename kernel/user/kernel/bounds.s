@@ -1,6 +1,6 @@
 	.cpu generic+fp+simd
 	.file	"bounds.c"
-// GNU C (GCC) version 4.9 20150123 (prerelease) (aarch64-linux-android)
+// GNU C (GCC) version 4.9.x-google 20140827 (prerelease) (aarch64-linux-android)
 //	compiled by GNU C version 4.8, GMP version 5.0.5, MPFR version 3.1.1, MPC version 1.0.1
 // GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 // options passed:  -nostdinc
@@ -12,11 +12,11 @@
 // -I /home/wuxianlin/android/caf/kernel/drivers/soc/qcom
 // -I /home/wuxianlin/android/caf/kernel/include/uapi
 // -I include/generated/uapi -I /home/wuxianlin/android/caf/kernel/. -I .
-// -iprefix /home/wuxianlin/android/cm-14.0/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/../lib/gcc/aarch64-linux-android/4.9/
+// -iprefix /home/wuxianlin/android/cm-13.0/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/../lib/gcc/aarch64-linux-android/4.9.x-google/
 // -D __KERNEL__ -D CC_HAVE_ASM_GOTO -D KBUILD_STR(s)=#s
 // -D KBUILD_BASENAME=KBUILD_STR(bounds)
 // -D KBUILD_MODNAME=KBUILD_STR(bounds)
-// -isystem /home/wuxianlin/android/cm-14.0/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/../lib/gcc/aarch64-linux-android/4.9/include
+// -isystem /home/wuxianlin/android/cm-13.0/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/../lib/gcc/aarch64-linux-android/4.9.x-google/include
 // -include /home/wuxianlin/android/caf/kernel/include/linux/kconfig.h
 // -MD kernel/.bounds.s.d
 // /home/wuxianlin/android/caf/kernel/kernel/bounds.c -mbionic
@@ -33,7 +33,7 @@
 // options enabled:  -faggressive-loop-optimizations -fauto-inc-dec
 // -fbranch-count-reg -fcaller-saves -fcombine-stack-adjustments
 // -fcompare-elim -fcprop-registers -fcrossjumping -fcse-follow-jumps
-// -fdefer-pop -fdevirtualize-speculatively -fdwarf2-cfi-asm
+// -fdefer-pop -fdevirtualize -fdevirtualize-speculatively -fdwarf2-cfi-asm
 // -fearly-inlining -feliminate-unused-debug-types
 // -fexpensive-optimizations -fforward-propagate -ffunction-cse -fgcse
 // -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
@@ -43,9 +43,9 @@
 // -fipa-profile -fipa-pure-const -fipa-reference -fipa-sra
 // -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
 // -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
-// -fleading-underscore -flifetime-dse -fmath-errno -fmerge-constants
+// -fleading-underscore -fmath-errno -fmerge-constants
 // -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
-// -fpartial-inlining -fpeel-codesize-limit -fpeephole -fpeephole2 -fplt
+// -fpartial-inlining -fpeel-codesize-limit -fpeephole -fpeephole2
 // -fprefetch-loop-arrays -free -freg-struct-return -freorder-blocks
 // -freorder-functions -frerun-cse-after-loop
 // -fsched-critical-path-heuristic -fsched-dep-count-heuristic
@@ -66,8 +66,7 @@
 // -ftree-tail-merge -ftree-ter -ftree-vrp -funit-at-a-time
 // -funroll-codesize-limit -fvar-tracking -fverbose-asm
 // -fzero-initialized-in-bss -mandroid -mbionic -mfix-cortex-a53-835769
-// -mfix-cortex-a53-843419 -mgeneral-regs-only -mlittle-endian -mlra
-// -momit-leaf-frame-pointer
+// -mgeneral-regs-only -mlittle-endian -mlra -momit-leaf-frame-pointer
 
 	.text
 .Ltext0:
@@ -539,12 +538,10 @@ foo:
 	.string	"PG_mappedtodisk"
 .LASF12:
 	.string	"PG_locked"
-.LASF25:
-	.string	"PG_writeback"
 .LASF16:
 	.string	"PG_dirty"
-.LASF3:
-	.string	"short unsigned int"
+.LASF25:
+	.string	"PG_writeback"
 .LASF23:
 	.string	"PG_private"
 .LASF35:
@@ -553,8 +550,6 @@ foo:
 	.string	"__MAX_NR_ZONES"
 .LASF37:
 	.string	"PG_fscache"
-.LASF55:
-	.string	"/home/wuxianlin/android/cm-14.0/out/target/product/r9plus/obj/KERNEL_OBJ"
 .LASF14:
 	.string	"PG_referenced"
 .LASF28:
@@ -563,10 +558,8 @@ foo:
 	.string	"zone_type"
 .LASF54:
 	.string	"/home/wuxianlin/android/caf/kernel/kernel/bounds.c"
-.LASF53:
-	.ascii	"GNU C 4.9 20150123 (prerelease) -mbionic -mlittle-endian -mg"
-	.ascii	"e"
-	.string	"neral-regs-only -mabi=lp64 -g -Os -std=gnu90 -fno-strict-aliasing -fno-common -fno-delete-null-pointer-checks -fno-pic -fstack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -fno-strict-overflow -fconserve-stack"
+.LASF3:
+	.string	"short unsigned int"
 .LASF31:
 	.string	"PG_swapbacked"
 .LASF36:
@@ -633,11 +626,17 @@ foo:
 	.string	"signed char"
 .LASF30:
 	.string	"PG_reclaim"
+.LASF55:
+	.string	"/home/wuxianlin/android/cm-13.0/out/target/product/r9plus/obj/KERNEL_OBJ"
 .LASF11:
 	.string	"_Bool"
+.LASF53:
+	.ascii	"GNU C 4.9.x-google 20140827 (prerelease) -mbionic -mlittle-e"
+	.ascii	"ndian -mge"
+	.string	"neral-regs-only -mabi=lp64 -g -Os -std=gnu90 -fno-strict-aliasing -fno-common -fno-delete-null-pointer-checks -fno-pic -fstack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -fno-strict-overflow -fconserve-stack"
 .LASF33:
 	.string	"PG_mlocked"
 .LASF43:
 	.string	"ZONE_DMA"
-	.ident	"GCC: (GNU) 4.9 20150123 (prerelease)"
+	.ident	"GCC: (GNU) 4.9.x-google 20140827 (prerelease)"
 	.section	.note.GNU-stack,"",%progbits

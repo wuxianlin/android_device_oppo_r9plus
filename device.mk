@@ -131,6 +131,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fingerprintd
 
+# Alipay
+PRODUCT_BOOT_JARS += \
+    ifaamanager
+
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
@@ -232,8 +236,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap \
-    libcamera_shim
+    Snap
 
 # Sound trigger
 PRODUCT_COPY_FILES += \

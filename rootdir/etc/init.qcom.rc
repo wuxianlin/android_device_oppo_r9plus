@@ -737,7 +737,13 @@ service iprenew_p2p /system/bin/dhcpcd -n
     disabled
     oneshot
 
-service ptt_socket_app /system/bin/ptt_socket_app -d
+#ifndef VENDOR_EDIT
+#Pan.Zhang@Connectivity.WiFi.Basic.Log.FB16, 2016/08/03,
+#Modify for wifi log enhance function
+#service ptt_socket_app /system/bin/ptt_socket_app -d
+#else /* VENDOR_EDIT */
+service ptt_socket_app /system/bin/ptt_socket_app -d -s -I
+#endif /* VENDOR_EDIT */
     class late_start
     user root
     group root
@@ -746,6 +752,19 @@ service ptt_socket_app /system/bin/ptt_socket_app -d
 #Qiulei@Connectivity.WiFi.Production, 2016/07/23
 #Add for [FP7] : wifi ftm
     disabled
+#endif /* VENDOR_EDIT */
+
+#ifdef VENDOR_EDIT
+#Pan.Zhang@Connectivity.WiFi.Basic.Log.FB16, 2016/08/03,
+#Add for wifi log enhance function
+on property:persist.sys.assert.panic=true
+     start ptt_socket_app
+
+on property:persist.sys.assert.panic=false
+     stop ptt_socket_app
+
+on property:oppo.wifi.ftm=1
+     stop ptt_socket_app
 #endif /* VENDOR_EDIT */
 
 #ifdef VENDOR_EDIT 

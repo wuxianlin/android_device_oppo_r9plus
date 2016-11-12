@@ -17,9 +17,11 @@
 #define CAMERA_PARAMETERS_EXTRA_C \
 const char CameraParameters::KEY_MAX_LONG_EXPOSURE_TIME[] = "max-long-exposure-time"; \
 const char CameraParameters::KEY_DNG_RAW_SIZE[] = "dng-raw-size"; \
-const char CameraParameters::KEY_APP_MASK[] = "app-mask";
+const char CameraParameters::KEY_APP_MASK[] = "app-mask"; \
+const char CameraParameters::KEY_SENSOR_ID[] = "sensor-id";
 
 #define CAMERA_PARAMETERS_EXTRA_H \
     static const char KEY_MAX_LONG_EXPOSURE_TIME[]; \
     static const char KEY_DNG_RAW_SIZE[]; \
-    static const char KEY_APP_MASK[];
+    static const char KEY_APP_MASK[]; \
+    static const char KEY_SENSOR_ID[];
